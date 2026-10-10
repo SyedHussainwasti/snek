@@ -1,0 +1,47 @@
+/* The color palette for the whole page — change a color here and it updates everywhere */
+:root{--bg:#0b0e14;--card:#131722;--line:#232a3a;--txt:#e8ecf4;--dim:#8b94a7;--acc:#6ee7a0;}
+
+/* Reset: remove default spacing on everything so the layout starts clean */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+
+/* The page itself: dark background, light text, content centered, roomy padding */
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,"Segoe UI",Inter,Roboto,sans-serif;display:flex;justify-content:center;min-height:100vh;padding:12px;}
+
+/* The narrow column that holds the whole game — never wider than 430px */
+.wrap{width:100%;max-width:430px;}
+
+/* The big "Snake" title at the top */
+h1{text-align:center;font-size:1.4rem;margin:8px 0;}
+
+/* The green accent word inside the title */
+h1 .m{color:var(--acc);}
+
+/* The score row under the title — score on the left, best on the right */
+.hud{display:flex;justify-content:space-between;padding:8px 4px;color:var(--dim);font-size:.95rem;}
+
+/* The score numbers themselves — brighter than the labels */
+.hud b{color:var(--txt);}
+
+/* The game frame: rounded box that holds the board and the menu overlay */
+.stage{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+
+/* The game board itself — fills the frame, stops the page scrolling on touch */
+canvas{display:block;width:100%;touch-action:none;background:#0d1119;}
+
+/* The menu / game-over panel floating over the board */
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(5,8,14,.82);text-align:center;padding:20px;}
+
+/* Hides the overlay when the game is running */
+.overlay.hidden{display:none;}
+
+/* The overlay's title ("Snake" / "Game Over") */
+.overlay h2{font-size:1.7rem;}
+
+/* The big emoji at the top of the overlay */
+.overlay .big{font-size:2.6rem;}
+
+/* The green Start / Play-again button */
+.btn{background:linear-gradient(135deg,#6ee7a0,#7cc7ff);border:none;border-radius:12px;padding:14px 38px;font-size:1.05rem;font-weight:800;color:#06110b;cursor:pointer;min-width:200px;}
+
+/* Small grey hint text under the game */
+.hint{color:var(--dim);font-size:.85rem;line-height:1.6;text-align:center;margin-top:10px;}

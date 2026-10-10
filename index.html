@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Makes the game fit phone screens nicely and stops pinch-zoom during play -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Snake</title>
+<!-- All the styling lives in styles.css -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- The narrow column holding the whole game -->
+<div class="wrap">
+  <!-- Title -->
+  <h1>🐍 <span class="m">Snake</span></h1>
+
+  <!-- Score row: current score and best score -->
+  <div class="hud"><span>Score <b id="score">0</b></span><span>Best <b id="best">0</b></span></div>
+
+  <!-- The game frame: the board plus the menu overlay on top -->
+  <div class="stage">
+    <!-- The board the snake is drawn on -->
+    <canvas id="cv" width="400" height="400"></canvas>
+    <!-- The start menu / game-over panel (hidden while playing) -->
+    <div class="overlay" id="ov">
+      <div class="big">🐍</div>
+      <h2 id="ovTitle">Snake</h2>
+      <p class="hint" id="ovSub">Eat the apples. Don't hit the walls<br>or yourself!</p>
+      <button class="btn" id="startBtn">Start</button>
+    </div>
+  </div>
+
+  <!-- Controls hint under the game -->
+  <p class="hint">Arrow keys / WASD / swipe to steer · Space to pause</p>
+</div>
+<!-- All the game code lives in app.js -->
+<script src="app.js"></script>
+</body>
+</html>
